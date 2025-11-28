@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import './FoodDisplay.css';
 import FoodItem from '../FoodItem/FoodItem';
 import { StoreContext } from "../../Context/StoreContext";
-import { food_list } from '../../assets/assets/frontend_assets/assets';
 
 const FoodDisplay = ({ category }) => {
 
@@ -20,7 +19,7 @@ const FoodDisplay = ({ category }) => {
                 key={index}
                 image={item.image}
                 name={item.name}
-                desc={item.description}
+                description={item.description}
                 price={item.price}
                 id={item._id}
               />

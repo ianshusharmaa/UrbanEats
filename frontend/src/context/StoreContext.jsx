@@ -1,11 +1,12 @@
 import { createContext, useState } from "react";
-import { food_list } from "../assets/assets/frontend_assets/assets";    
+import { food_list as foods } from "../assets/assets/frontend_assets/assets";
 
 export const StoreContext = createContext();
 
 export const StoreContextProvider = ({ children }) => {
 
-    const [food_list, setFoodList] = useState([]);
+    // Load assets food_list directly into state
+    const [food_list, setFoodList] = useState(foods);
 
     const value = {
         food_list,
