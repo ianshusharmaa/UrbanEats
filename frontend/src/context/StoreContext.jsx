@@ -3,9 +3,20 @@ import { food_list as foods } from "../assets/assets/frontend_assets/assets";
 
 export const StoreContext = createContext();
 
-export const StoreContextProvider = ({ children }) => {
+export const StoreContextProvider = ({ children }) => { 
 
-    // Load assets food_list directly into state
+
+    const [cartItems, setCartItems] = useState([]); 
+     
+    const addToCart = (itemId) => {
+        if (cartItems[itemId]) {
+            setCartItems( (prev) => ({...prev, [itemId]: 1}))
+     }  
+        else {
+            setCartItems( (prev) => ({...prev, [itemId]: prev[itemId] + 1}) )
+        }
+    }
+    
     const [food_list, setFoodList] = useState(foods);
 
     const value = {
